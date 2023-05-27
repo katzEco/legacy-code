@@ -59,8 +59,7 @@ foreach ($exclude as $ex) {
   <link rel="stylesheet" href="component/main.css">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
 
-  <link rel="stylesheet" href="/listing-php/cdn/index.css">
-  <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/katzEco/legacy-code@main/listing-php/cdn/index.css"> -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/katzEco/legacy-code@main/listing-php/cdn/index.css">
 
   <style>
     @import url(https://fonts.googleapis.com/css?family=IBM+Plex+Sans+Thai:100,200,300,regular,500,600,700);
@@ -130,7 +129,7 @@ foreach ($exclude as $ex) {
                   if (!empty($files)) {
                     foreach ($files as $file) {
                   ?>
-                      <a href="<?php echo $_SERVER['REQUEST_URI'] . '/' . $file; ?>" class="control">
+                      <a href="<?php echo $_SERVER['REQUEST_URI'] . $file; ?>" class="control">
                         <span>
                           <img class="icon" src="https://cdn.jsdelivr.net/gh/katzEco/legacy-code@main/listing-php/cdn/image/<?php echo ext($file); ?>.svg" alt="">
                         </span>
