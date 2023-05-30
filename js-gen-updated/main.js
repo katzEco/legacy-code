@@ -1,3 +1,5 @@
+// Created w/ 🤍 by Suphakit P. (https://suphait.net)
+
 const dataInput = {
   title: document.querySelector('#title'),
   subTitle: document.querySelector('#subTitle'),
