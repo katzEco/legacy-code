@@ -29,6 +29,10 @@ a.widgetBox:hover {
   opacity: .6;
 }
 
+a.widgetBox:hover * {
+  transform: scale(1.05, 1.05);
+}
+
 .widgetBox .textContainer * {
   margin: 0;
 }
