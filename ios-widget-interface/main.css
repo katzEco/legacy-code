@@ -13,17 +13,18 @@ body {
 
 .container {
   max-width: 35rem;
+
   margin: 0 auto;
+  padding: 2rem 0;
 
   display: grid;
   gap: 1rem;
-
-  padding: 2rem 0;
 }
 
 .widgetBox {
   width: auto;
   height: 13rem;
+
   border-radius: 1rem;
   padding: 0 1rem;
 
