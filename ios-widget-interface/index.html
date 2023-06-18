@@ -9,12 +9,12 @@
 </head>
 <body>
   <div class="container">
-    <div class="widgetBox" style="background: #fe6e6f; grid-column: span 4 / span 4;">
+    <div class="widgetBox" style="background: #fe6e6f; grid-column: span 6 / span 6;">
       <div class="imgContainer">
         <img src="https://avatars.githubusercontent.com/u/25049577?v=4" alt="profilePic" class="logo">
       </div>
       <div class="textContainer">
-        <h2 style="margin: .25rem 0 !important; font-weight: 400;">
+        <h2 style="margin: .25rem 0 !important; font-weight: 400; text-decoration: underline wavy #2e2f2f;">
           Suphakit P.
         </h2>
         <p style="width: 60%; margin: 0 auto;">
@@ -23,11 +23,45 @@
       </div>
     </div>
 
-    <a class="widgetBox" style="background: #1c9aee; grid-column: span 2 / span 2;" href="https://twitter.com/georgeKdeterk" target="_blank">
-      <div class="imgContainer">
-        <img src="src/img/twitter.svg" alt="twitter" style="width: 50px;">
+    <div class="widgetColBox">
+      <a class="widgetBox" style="background: #2f89fe; grid-column: span 2 / span 2;" href="https://twitter.com/georgeKdeterk" target="_blank">
+        <div class="imgContainer">
+          <img src="src/img/facebook.svg" alt="facebook" style="width: 50px;">
+        </div>
+      </a>
+
+      <a class="widgetBox" style="background: #1c9aee; grid-column: span 2 / span 2;" href="https://fb.com/detzz.in.th" target="_blank">
+        <div class="imgContainer">
+          <img src="src/img/twitter.svg" alt="twitter" style="width: 50px;">
+        </div>
+      </a>
+    </div>
+
+    <div class="widgetColBox">
+      <div class="widgetBox" style="background: rgb(129, 231, 129); grid-column: span 1 / span 1;" href="https://twitter.com/georgeKdeterk" target="_blank">
+        <div class="textContainer">
+          <p style="color: #2e2f2f;">
+            BirthDay
+          </p>
+          <div id="bDayLeft">
+
+          </div>
+        </div>
       </div>
-    </a>
+  
+      <div class="widgetBox" style="background: rgb(236, 173, 228); grid-column: span 1 / span 1;" href="https://twitter.com/georgeKdeterk" target="_blank">
+        <div class="textContainer">
+          <p style="color: #2e2f2f;">
+            💕
+          </p>
+          <div id="relaDayLeft">
+
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
+
+  <script src="src/js/dayCount.js"></script>
 </body>
 </html>
