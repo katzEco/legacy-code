@@ -1,5 +1,33 @@
 @import url(https://fonts.googleapis.com/css?family=Open+Sans:300,regular,500,600,700,800,300italic,italic,500italic,600italic,700italic,800italic);
 
+@import url(src/css/responsive.css);
+
 * {
   font-family: 'Open Sans', sans-serif;
+}
+
+body {
+  background: #2e2f2f;
+  color: whitesmoke;
+}
+
+.container {
+  max-width: 35rem;
+  margin: 0 auto;
+
+  display: grid;
+  gap: 1rem;
+
+  padding: 2rem 0;
+}
+
+.widgetBox {
+  width: auto;
+  height: 13rem;
+  border-radius: 1rem;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
 }
