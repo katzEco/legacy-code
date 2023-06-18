@@ -1,0 +1,34 @@
+.widgetColBox .widgetBox {
+  min-height: 6.5rem;
+}
+
+.widgetBox {
+  min-height: 13rem;
+
+  border-radius: 1rem;
+
+  padding: 1rem 0;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+}
+
+a.widgetBox {
+  text-decoration: none;
+  color: whitesmoke;
+}
+
+.widgetBox:hover {
+  transform: scale(.95, .95);
+  cursor: pointer;
+}
+
+a.widgetBox:hover {
+  opacity: .6;
+}
+
+.widgetBox .textContainer * {
+  margin: 0;
+}

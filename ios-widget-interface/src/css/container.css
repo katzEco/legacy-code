@@ -1,0 +1,37 @@
+.container {
+  max-width: 40rem;
+
+  margin: 0 auto;
+  padding: 2rem 0;
+
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(8, minmax(0, 1fr));
+}
+
+.widgetColBox {
+  grid-column: span 2 / span 2;
+
+  display: grid;
+  grid-template-columns: repeat(1, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.imgContainer {
+  width: 100%;
+}
+
+.imgContainer img {
+  width: 100px;
+  height: auto;
+
+  margin: 0 auto;
+  padding: .25rem;
+}
+
+.imgContainer img.logo {
+  width: 150px !important;
+
+  border-radius: 100%;
+  border: 3px solid whitesmoke;
+}

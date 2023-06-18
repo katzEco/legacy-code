@@ -1,6 +1,8 @@
 @import url(https://fonts.googleapis.com/css?family=Open+Sans:300,regular,500,600,700,800,300italic,italic,500italic,600italic,700italic,800italic);
 
 @import url(src/css/responsive.css);
+@import url(src/css/container.css);
+@import url(src/css/widget.css);
 
 * {
   font-family: 'Open Sans', sans-serif;
@@ -11,77 +13,4 @@
 body {
   background: #2e2f2f;
   color: whitesmoke;
-}
-
-.container {
-  max-width: 40rem;
-
-  margin: 0 auto;
-  padding: 2rem 0;
-
-  display: grid;
-  gap: 1rem;
-  grid-template-columns: repeat(8, minmax(0, 1fr));
-}
-
-.widgetColBox {
-  grid-column: span 2 / span 2;
-
-  display: grid;
-  grid-template-columns: repeat(1, minmax(0, 1fr));
-  gap: 1rem;
-}
-
-.widgetColBox .widgetBox {
-  min-height: 6.5rem;
-}
-
-.widgetBox {
-  min-height: 13rem;
-
-  border-radius: 1rem;
-
-  padding: 1rem 0;
-
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  text-align: center;
-}
-
-a.widgetBox {
-  text-decoration: none;
-  color: whitesmoke;
-}
-
-.widgetBox:hover {
-  transform: scale(.95, .95);
-  cursor: pointer;
-}
-
-a.widgetBox:hover {
-  opacity: .6;
-}
-
-.widgetBox .textContainer * {
-  margin: 0;
-}
-
-.imgContainer {
-  width: 100%;
-}
-
-.imgContainer img {
-  width: 100px;
-  height: auto;
-
-  margin: 0 auto;
-  padding: .25rem;
-}
-
-.imgContainer img.logo {
-  width: 150px !important;
-
-  border-radius: 100%;
-  border: 3px solid whitesmoke;
 }
