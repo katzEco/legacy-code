@@ -56,6 +56,7 @@ a.widgetBox {
 
 .widgetBox:hover {
   transform: scale(.95, .95);
+  cursor: pointer;
 }
 
 a.widgetBox:hover {
