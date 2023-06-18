@@ -25,6 +25,7 @@ body {
   width: auto;
   height: 13rem;
   border-radius: 1rem;
+  padding: 0 1rem;
 
   display: flex;
   flex-direction: column;
