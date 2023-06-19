@@ -1,8 +1,11 @@
 const spotifyElement = document.querySelector("#spotify");
+const statusElement = document.querySelector('#discord')
+
+const userID = 298415109359796234;
 
 async function lanyardPull() {
   const axiosSetup = await axios.get(
-    "https://api.lanyard.rest/v1/users/298415109359796234"
+    "https://api.lanyard.rest/v1/users/" + userID
   );
   const resp = axiosSetup.data.data;
 
@@ -21,6 +24,7 @@ async function lanyardPull() {
     listen: resp.listening_to_spotify,
     spotify: spotifyBox,
     status: resp.discord_status,
+    avatarImage: `https://cdn.discordapp.com/avatars/${resp.discord_user.id}/${resp.discord_user.avatar}.webp?size=4096`
   };
 
   return API;
@@ -42,8 +46,8 @@ async function spotifyFetch() {
 
   // Mocking
   const API = {
-    listen: false
-  }
+    listen: false,
+  };
 
   if (API.listen != true) {
     spotifyElement.setAttribute(
@@ -53,15 +57,15 @@ async function spotifyFetch() {
     spotifyElement.setAttribute("href", nullData.trackLink);
     spotifyElement.setAttribute("target", "_blank");
     spotifyElement.innerHTML = `<div class="overlay" style="border-radius: 1rem;">
-<div class="textContainer">
-  <h2 style="margin: .5rem 0;">
-    ${nullData.song}
-  </h2>
-  <p>
-    ${nullData.artist}
-  </p>
-</div>
-</div>`;
+      <div class="textContainer">
+        <h2 style="margin: .5rem 0;">
+          ${nullData.song}
+        </h2>
+        <p>
+          ${nullData.artist}
+        </p>
+      </div>
+      </div>`;
   } else {
     spotifyElement.setAttribute(
       "style",
@@ -70,20 +74,68 @@ async function spotifyFetch() {
     spotifyElement.setAttribute("href", spotifyAPI.trackLink);
     spotifyElement.setAttribute("target", "_blank");
     spotifyElement.innerHTML = `<div class="overlay" style="border-radius: 1rem;">
-<div class="textContainer">
-  <h2 style="margin: .5rem 0;">
-    ${spotifyAPI.song}
-  </h2>
-  <p>
-    ${spotifyAPI.artist}
-  </p>
-</div>
-</div>`;
+      <div class="textContainer">
+        <h2 style="margin: .5rem 0;">
+          ${spotifyAPI.song}
+        </h2>
+        <p>
+          ${spotifyAPI.artist}
+        </p>
+      </div>
+      </div>`;
   }
 }
 
+async function discordStatus() {
+  // const dAPI = await lanyardPull();
+  // const discordAPI = discordAPI.status
+
+  // Mocking
+  const status = ["online", "idle", "dnd", "offline"];
+  const discordAPI = {
+    status: status[2],
+    avatarImage: 'https://cdn.discordapp.com/avatars/298415109359796234/8055c54d88c237afa8e12e5837c3a8dd.webp?size=4096'
+  };
+
+  let statusReturn
+
+  switch (discordAPI.status) {
+    case 'online':
+      statusReturn = 'Online'
+      break;
+
+    case 'idle':
+      statusReturn = 'Idle'
+      break;
+
+    case 'dnd':
+      statusReturn = 'Do Not Disturb'
+      break;
+  
+    default:
+      statusReturn = 'Offline'
+      break;
+  }
+
+  statusElement.setAttribute('style', `background: url(${discordAPI.avatarImage}); grid-column: span 2 / span 2; padding: 0;`)
+  statusElement.innerHTML = `<div class="overlay ${discordAPI.status}" style="border-radius: 1rem;">
+  <div class="discordContainer" >
+    <div class="imgContainer">
+      <img src="src/img/discord.svg" alt="discord">
+    </div>
+    <div class="textContainer">
+      <p style="text-decoration: underline;">
+        Discord Status
+      </p>
+      ${(discordAPI.status == 'dnd') ? `<h2>${statusReturn}</h2>` : `<h1>${statusReturn}</h1>`}
+    </div>
+  </div>
+</div>`
+}
+
 spotifyFetch();
+discordStatus();
 
 const spotifyData = setInterval(async function () {
-  await spotifyFetch()
+  await spotifyFetch();
 }, 5000);
