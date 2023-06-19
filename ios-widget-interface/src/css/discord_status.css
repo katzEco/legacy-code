@@ -1,0 +1,15 @@
+.online {
+  background: rgba(94, 241, 71, 0.6) !important;
+}
+
+.idle {
+  background: rgba(243, 206, 21, 0.6) !important;
+}
+
+.dnd {
+  background: rgba(242, 42, 42, 0.6) !important;
+}
+
+.offline {
+  background: rgba(111, 111, 111, 0.6) !important;
+}
