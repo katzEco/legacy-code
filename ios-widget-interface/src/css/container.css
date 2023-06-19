@@ -9,6 +9,20 @@
   grid-template-columns: repeat(8, minmax(0, 1fr));
 }
 
+.overlay {
+  width: 100%;
+  height: 100%;
+
+  background: rgba(0, 0, 0, 0.7);
+  backdrop-filter: blur(5px);
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+}
+
 .widgetColBox {
   grid-column: span 2 / span 2;
 

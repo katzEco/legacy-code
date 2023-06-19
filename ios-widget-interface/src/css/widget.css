@@ -29,12 +29,20 @@ a.widgetBox {
   cursor: pointer;
 }
 
+.widgetBox:hover .overlay {
+  transform: scale(1, 1);
+}
+
 a.widgetBox:hover {
   opacity: .6;
 }
 
 a.widgetBox:hover * {
   transform: scale(1.05, 1.05);
+}
+
+a.widgetBox:hover .overlay * {
+  transform: scale(1.10, 1.10);
 }
 
 .widgetBox .textContainer * {
