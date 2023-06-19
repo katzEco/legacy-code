@@ -37,9 +37,10 @@ async function spotifyFetch() {
     song: "Lo-Fi Recreation",
   };
 
-  let spotifyAPI = (await lanyardPull()).spotify;
+  const API = await lanyardPull();
+  const spotifyAPI = API.spotify
 
-  if (spotifyAPI == null) {
+  if (API.listen != true) {
     spotifyElement.setAttribute(
       "style",
       `background-color: #33ba53; background-image: url(${nullData.albumArt}) !important; grid-column: span 4 / span 4; padding: 0 !important;`
@@ -81,4 +82,4 @@ spotifyFetch();
 
 const spotifyData = setInterval(async function () {
   await spotifyFetch()
-}, 10000);
+}, 5000);
