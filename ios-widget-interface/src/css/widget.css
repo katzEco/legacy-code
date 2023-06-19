@@ -13,6 +13,10 @@
   flex-direction: column;
   justify-content: center;
   text-align: center;
+
+  background-position: center !important;
+  background-repeat: no-repeat !important;
+  background-size: cover !important;
 }
 
 a.widgetBox {
