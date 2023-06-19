@@ -3,6 +3,7 @@
 @import url(src/css/responsive.css);
 @import url(src/css/container.css);
 @import url(src/css/widget.css);
+@import url(src/css/discord_status.css);
 
 * {
   font-family: 'Open Sans', sans-serif;
