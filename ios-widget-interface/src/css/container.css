@@ -81,3 +81,22 @@
 .refContainer li p a.innerLink:nth-child(2) {
   padding-left: .5rem;
 }
+
+.discordContainer {
+  width: 100%;
+
+  padding: 2rem 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+
+.discordContainer .imgContainer {
+  width: auto;
+}
+
+.discordContainer .textContainer {
+  width: 50%;
+}
