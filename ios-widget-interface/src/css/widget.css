@@ -48,3 +48,17 @@ a.widgetBox:hover .overlay * {
 .widgetBox .textContainer * {
   margin: 0;
 }
+
+#time {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+}
+
+#time h1 {
+  margin: 0 auto;
+  padding: 0;
+  text-align: center;
+  font-size: 50px;
+}
