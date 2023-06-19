@@ -57,9 +57,6 @@ async function spotifyFetch() {
 </div>
 </div>`;
   } else {
-    if (spotifyAPI == null) {
-      spotifyAPI = (await lanyardPull()).spotify;
-    }
 
     spotifyElement.setAttribute(
       "style",
@@ -84,4 +81,4 @@ spotifyFetch();
 
 const spotifyData = setInterval(async function () {
   await spotifyFetch()
-}, 30000);
+}, 10000);
