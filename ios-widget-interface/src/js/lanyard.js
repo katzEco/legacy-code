@@ -1,5 +1,6 @@
 const spotifyElement = document.querySelector("#spotify");
-const statusElement = document.querySelector('#discord')
+const statusElement = document.querySelector('#discord');
+const customElement = document.querySelector('#discordStatus')
 
 const userID = '298415109359796234';
 
@@ -19,12 +20,15 @@ async function lanyardPull() {
           album: resp.spotify.album,
           albumArt: resp.spotify.album_art_url,
         };
+  
+  const customStatus = (resp.activities[0].name != 'Custom Status') ? 'Got no custom status now :(' : resp.activities[0].state
 
   const API = {
     listen: resp.listening_to_spotify,
     spotify: spotifyBox,
     status: resp.discord_status,
-    avatarImage: `https://cdn.discordapp.com/avatars/${resp.discord_user.id}/${resp.discord_user.avatar}.webp?size=4096`
+    avatarImage: `https://cdn.discordapp.com/avatars/${resp.discord_user.id}/${resp.discord_user.avatar}.webp?size=4096`,
+    customStatus: customStatus
   };
 
   return API;
@@ -114,7 +118,7 @@ async function discordStatus() {
       break;
   }
 
-  statusElement.setAttribute('style', `background: url(${discordAPI.avatarImage}); grid-column: span 2 / span 2; padding: 0;`)
+  statusElement.setAttribute('style', `background: url(${discordAPI.avatarImage}); grid-column: span 5 / span 5; padding: 0;`)
   statusElement.innerHTML = `<div class="overlay ${discordAPI.status}" style="border-radius: 1rem;">
   <div class="discordContainer" >
     <div class="imgContainer">
@@ -130,8 +134,26 @@ async function discordStatus() {
 </div>`
 }
 
+async function customStatus() {
+  const discordAPI = await lanyardPull();
+
+  customElement.innerHTML = `<div class="overlay" style="border-radius: 1rem;">
+  <div class="discordContainer">
+    <div class="textContainer" style="width: 100%;">
+      <p style="text-decoration: underline; margin-bottom: 1rem;">
+        Discord custom status
+      </p> 
+      <p>
+        ${discordAPI.customStatus}
+      </p>
+    </div>
+  </div>
+</div>`
+}
+
 spotifyFetch();
 discordStatus();
+customStatus();
 
 const spotifyData = setInterval(async function () {
   await spotifyFetch();
