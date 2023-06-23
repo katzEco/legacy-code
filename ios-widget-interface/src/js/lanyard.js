@@ -1,11 +1,11 @@
 const spotifyElement = document.querySelector("#spotify");
 const statusElement = document.querySelector('#discord')
 
-const userID = 298415109359796234;
+const userID = '298415109359796234';
 
 async function lanyardPull() {
   const axiosSetup = await axios.get(
-    "https://api.lanyard.rest/v1/users/" + userID
+    `https://api.lanyard.rest/v1/users/${userID}`
   );
   const resp = axiosSetup.data.data;
 
@@ -87,15 +87,12 @@ async function spotifyFetch() {
 }
 
 async function discordStatus() {
-  // const dAPI = await lanyardPull();
-  // const discordAPI = discordAPI.status
+  const discordAPI = await lanyardPull();
 
-  // Mocking
-  const status = ["online", "idle", "dnd", "offline"];
-  const discordAPI = {
-    status: status[2],
-    avatarImage: 'https://cdn.discordapp.com/avatars/298415109359796234/8055c54d88c237afa8e12e5837c3a8dd.webp?size=4096'
-  };
+  // const discordAPI = {
+  //   status: 'dnd',
+  //   avatarImage: ''
+  // }
 
   let statusReturn
 
