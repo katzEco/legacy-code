@@ -1,0 +1,52 @@
+#blogUpdation {
+  padding: 1rem 0 !important;
+}
+
+#blogUpdation:hover {
+  transform: scale(1, 1) !important;
+}
+
+.feedContainer {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.feedContainer h1 {
+  font-size: 20px !important;
+  padding: .5rem 1rem;
+  margin: 0;
+}
+
+#feed {
+  width: 100%;
+
+  padding: 0;
+  margin: 0;
+  
+  list-style-type: none;
+}
+
+#feed li {
+  padding: 0 1rem;
+  text-align: left;
+  margin: 1rem 0;
+}
+
+#feed li:hover {
+  transform: scale(.95, .95);
+  opacity: .8;
+}
+
+#feed li a {
+  color: whitesmoke;
+  text-decoration: none;
+  padding: 0;
+  margin: 0;
+}
+
+#feed li p {
+  padding: 0;
+  margin: 0;
+  color: rgb(114, 114, 114);
+}
