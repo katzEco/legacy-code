@@ -39,6 +39,9 @@ function relaDay() {
   const calDate = ((new Date(date).getTime() - new Date().getTime()) >= 0) ? date : datePlus
   const timeStamp = new Date(calDate).getTime()
 
+  const text = ['Not now :)', 'Soon :)']
+  const rtnText = text[Math.floor(Math.random() * 2)]
+
   let x = setInterval(function () {
     const currentTime = new Date().getTime()
     const diff = timeStamp - currentTime
@@ -56,7 +59,7 @@ function relaDay() {
     } else if (day == 0) {
       returnItem = `<h2>Today!!</h2>`
     } else {
-      returnItem = '<h2>Not now :)</h2>'
+      returnItem = `<h2>${rtnText}</h2>`
     }
 
     relaDayElement.innerHTML = returnItem
