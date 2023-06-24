@@ -19,3 +19,5 @@ Just copy This and change value in `<!-- * --->`
   <script src="https://cdn.jsdelivr.net/gh/katzEco/legacy-code@main/js-gen-updated/main.js"></script>
 </body>
 ```
+
+see [demo](./template.html)
