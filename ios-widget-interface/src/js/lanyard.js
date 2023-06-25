@@ -45,13 +45,13 @@ async function spotifyFetch() {
     song: "Lo-Fi Recreation",
   };
 
-  // const API = await lanyardPull();
-  // const spotifyAPI = API.spotify
+  const API = await lanyardPull();
+  const spotifyAPI = API.spotify
 
   // Mocking
-  const API = {
-    listen: false,
-  };
+  // const API = {
+  //   listen: false,
+  // };
 
   if (API.listen != true) {
     spotifyElement.setAttribute(
