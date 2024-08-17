@@ -1,8 +1,8 @@
 const spotifyElement = document.querySelector("#spotify");
-const statusElement = document.querySelector('#discord');
-const customElement = document.querySelector('#discordStatus')
+const statusElement = document.querySelector("#discord");
+const customElement = document.querySelector("#discordStatus");
 
-const userID = '298415109359796234';
+const userID = "387465159322632202";
 
 async function lanyardPull() {
   const axiosSetup = await axios.get(
@@ -20,15 +20,18 @@ async function lanyardPull() {
           album: resp.spotify.album,
           albumArt: resp.spotify.album_art_url,
         };
-  
-  const customStatus = (resp.activities[0].name != 'Custom Status') ? 'Got no custom status now :(' : resp.activities[0].state
+
+  const customStatus =
+    resp.activities[0].name != "Custom Status"
+      ? "Got no custom status now :("
+      : resp.activities[0].state;
 
   const API = {
     listen: resp.listening_to_spotify,
     spotify: spotifyBox,
     status: resp.discord_status,
     avatarImage: `https://cdn.discordapp.com/avatars/${resp.discord_user.id}/${resp.discord_user.avatar}.webp?size=4096`,
-    customStatus: customStatus
+    customStatus: customStatus,
   };
 
   return API;
@@ -46,7 +49,7 @@ async function spotifyFetch() {
   };
 
   const API = await lanyardPull();
-  const spotifyAPI = API.spotify
+  const spotifyAPI = API.spotify;
 
   // Mocking
   // const API = {
@@ -98,28 +101,33 @@ async function discordStatus() {
   //   avatarImage: ''
   // }
 
-  let statusReturn
+  let statusReturn;
 
   switch (discordAPI.status) {
-    case 'online':
-      statusReturn = 'Online'
+    case "online":
+      statusReturn = "Online";
       break;
 
-    case 'idle':
-      statusReturn = 'Idle'
+    case "idle":
+      statusReturn = "Idle";
       break;
 
-    case 'dnd':
-      statusReturn = 'Do Not Disturb'
+    case "dnd":
+      statusReturn = "Do Not Disturb";
       break;
-  
+
     default:
-      statusReturn = 'Offline'
+      statusReturn = "Offline";
       break;
   }
 
-  statusElement.setAttribute('style', `background: url(${discordAPI.avatarImage}); grid-column: span 5 / span 5; padding: 0;`)
-  statusElement.innerHTML = `<div class="overlay ${discordAPI.status}" style="border-radius: 1rem;">
+  statusElement.setAttribute(
+    "style",
+    `background: url(${discordAPI.avatarImage}); grid-column: span 5 / span 5; padding: 0;`
+  );
+  statusElement.innerHTML = `<div class="overlay ${
+    discordAPI.status
+  }" style="border-radius: 1rem;">
   <div class="discordContainer" >
     <div class="imgContainer">
       <img src="src/img/discord.svg" alt="discord">
@@ -128,10 +136,14 @@ async function discordStatus() {
       <p style="text-decoration: underline;">
         Discord Status
       </p>
-      ${(discordAPI.status == 'dnd') ? `<h2>${statusReturn}</h2>` : `<h1>${statusReturn}</h1>`}
+      ${
+        discordAPI.status == "dnd"
+          ? `<h2>${statusReturn}</h2>`
+          : `<h1>${statusReturn}</h1>`
+      }
     </div>
   </div>
-</div>`
+</div>`;
 }
 
 async function customStatus() {
@@ -148,7 +160,7 @@ async function customStatus() {
       </p>
     </div>
   </div>
-</div>`
+</div>`;
 }
 
 spotifyFetch();
