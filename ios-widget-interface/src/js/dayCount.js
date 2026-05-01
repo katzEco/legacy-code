@@ -1,6 +1,8 @@
 const bDayElement = document.querySelector('#bDayLeft')
 const relaDayElement = document.querySelector('#relaDayLeft')
 
+const months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+
 function bDay() {
   const date = 'June 15, ' + (new Date().getFullYear()) + ' 02:17'
   const datePlus = 'June 15, ' + (new Date().getFullYear() + 1) + ' 02:17'
@@ -34,9 +36,16 @@ function bDay() {
 function relaDay() {
   // const date = 'June 15, ' + (new Date().getFullYear()) + ' 02:17'
   // const datePlus = 'June 15, ' + (new Date().getFullYear() + 1) + ' 02:17'
-  const date = 0
-  const datePlus = 0
-  const calDate = ((new Date(date).getTime() - new Date().getTime()) >= 0) ? date : datePlus
+  const today = new Date()
+
+  const month = 3
+  const day = 28
+  const year = 2026
+  const time = '00:30'
+
+  const date = `${months[month]} ${day}, ${year} ${time}`
+  const datePlus = `${months[month]} ${day}, ${year + 1} ${time}`
+  const calDate = ((new Date(date).getTime() - today.getTime()) >= 0) ? date : datePlus
   const timeStamp = new Date(calDate).getTime()
 
   const text = ['Not now :)', 'Soon :)']
